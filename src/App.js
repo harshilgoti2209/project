@@ -18,7 +18,7 @@ let App = () => {
         <Route exact path="/about" component={About}></Route>
         <Redirect to="/"></Redirect>
       </Switch>
-      <footer className='bg-dark text-center  text-light' >@2020 Copyright Harshil Goti A</footer>
+      <footer className='bg-dark text-center  text-light' >@2020 Copyright Harshil Goti Arvindbhai</footer>
     </>
   );
 };
