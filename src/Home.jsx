@@ -7,7 +7,7 @@ const Home = () => {
       <section>
         <div className="container-fluid">
           <div className="row">
-            <div className="col-11 mx-auto d-flex flex-row">
+            <div className="col-11 mx-auto d-flex flex-row" id='harsh2'>
               <div className="Home-info">
                 <h1 className="bold">
                   Grow Your business with
