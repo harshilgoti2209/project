@@ -20,7 +20,7 @@ let App = () => {
         <Route exact path="/pig" component={Pig}></Route>
         <Redirect to="/"></Redirect>
       </Switch>
-      <footer className='bg-dark text-center  text-light' >@2020 Copyright Harshil Goti A</footer>
+      <footer className='bg-dark text-center  text-light' >@2020 Copyright Harshil Goti Arvindbhai</footer>
     </>
   );
 };
