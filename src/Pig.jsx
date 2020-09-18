@@ -20,21 +20,11 @@ const Pig = () => {
     if (ran == 1) {
       u3(0);
       u4(0);
-      let cx = document.getElementById(`${current}`);
-      let cy = document.getElementById(`${1 - current}`);
-      cx.classList.add("active");
-      cy.classList.remove("active");
       u0(1 - current);
     } else if (current == 0) u3(live1 + ran);
     else u4(live2 + ran);
   };
   const ngame = () => {
-    if (current == 1) {
-      let cx = document.getElementById(`${current}`);
-      let cy = document.getElementById(`${1 - current}`);
-      cx.classList.add("active");
-      cy.classList.remove("active");
-    }
     u0(0);
     u1(0);
     u2(0);
@@ -51,10 +41,6 @@ const Pig = () => {
       }
       u1(score1 + live1);
       u3(0);
-      let cx = document.getElementById(`${current}`);
-      let cy = document.getElementById(`${1 - current}`);
-      cx.classList.add("active");
-      cy.classList.remove("active");
       u0(1 - current);
     } else {
       if (score2 + live2 >= 100) {
@@ -64,17 +50,16 @@ const Pig = () => {
       }
       u2(score2 + live2);
       u4(0);
-      let cx = document.getElementById(`${current}`);
-      let cy = document.getElementById(`${1 - current}`);
-      cx.classList.add("active");
-      cy.classList.remove("active");
       u0(1 - current);
     }
   };
   return (
     <>
       <div className="page col-11 mx-auto my-1">
-      <h1 className='text-center'> Do your score 100+ (1 will erase your score)</h1>
+        <h1 className="text-center">
+          {" "}
+          Do your score 100+ (1 will erase your score)
+        </h1>
         <div className="button-group">
           <div className="cc">
             <img src={im} alt="..." height="30px" />
@@ -94,20 +79,21 @@ const Pig = () => {
           <div className="player-1">
             <h1 className="player-1-1">
               Player:1
-              <svg
-                id="0"
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                className="bi bi-check-circle-fill"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-                />
-              </svg>
+              {current === 0 ? (
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  className="bi bi-check-circle-fill"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                  />
+                </svg>
+              ) : null}
             </h1>
             <h2 className="player-1-2">{score1}</h2>
           </div>
@@ -120,20 +106,21 @@ const Pig = () => {
           <div className="player-1">
             <h1 className="player-1-1">
               Player:2
-              <svg
-                id="1"
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                className="active bi bi-check-circle-fill"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-                />
-              </svg>
+              {current == 1 ? (
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  className="active bi bi-check-circle-fill"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+                  />
+                </svg>
+              ) : null}
             </h1>
             <h2 className="player-1-2">{score2}</h2>
           </div>
