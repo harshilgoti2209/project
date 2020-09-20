@@ -14,7 +14,7 @@ const About = () => {
                 </h1>
                 <p> click here to know about us</p>
                 <button type="button" class="btn btn-outline-primary">
-                  <NavLink className='nav-link' to='/'>
+                  <NavLink className='nav-link ' to='/'>
                     About us
                   </NavLink>
                 </button>
